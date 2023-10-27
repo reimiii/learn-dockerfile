@@ -7,4 +7,10 @@ docker ls
 
 # RUN
 docker build -t reimii/run run
-docker build -t reimii/run run --progress=plain --no-cache
+docker build -t reimii/run run --no-cache
+
+# CMD 
+docker build -t reimii/command command
+docker container create --name command reimii/command
+docker container start command
+docker container logs command
