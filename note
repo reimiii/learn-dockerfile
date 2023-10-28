@@ -14,3 +14,8 @@ docker build -t reimii/command command
 docker container create --name command reimii/command
 docker container start command
 docker container logs command
+
+# LABEL
+docker build -t reimii/label label
+docker image inspect reimii/label
+
