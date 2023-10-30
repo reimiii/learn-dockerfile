@@ -1,0 +1,1 @@
+copy file sup copy file sup.txt with pattern

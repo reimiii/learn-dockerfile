@@ -25,4 +25,9 @@ docker container create --name add reimii/add
 docker container start add
 docker container logs add
 
+# COPY 
+docker build -t reimii/copy copy
+docker container create --name copy reimii/copy
+docker container start copy
+docker container logs copy
 
