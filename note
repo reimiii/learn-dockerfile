@@ -31,3 +31,8 @@ docker container create --name copy reimii/copy
 docker container start copy
 docker container logs copy
 
+# INGNORE 
+docker build -t reimii/ignore ignore
+docker container create --name ignore reimii/ignore
+docker container start ignore
+docker container logs ignore
