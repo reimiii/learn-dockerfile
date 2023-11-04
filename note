@@ -36,3 +36,10 @@ docker build -t reimii/ignore ignore
 docker container create --name ignore reimii/ignore
 docker container start ignore
 docker container logs ignore
+
+# EXPOSE 
+docker build -t reimii/expose expose
+docker image inspect reimii/expose
+docker container create --name expose -p 80:8080 reimii/expose
+docker container start expose
+docker container stop expose
