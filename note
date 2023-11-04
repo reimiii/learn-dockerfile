@@ -43,3 +43,11 @@ docker image inspect reimii/expose
 docker container create --name expose -p 80:8080 reimii/expose
 docker container start expose
 docker container stop expose
+
+# ENV 
+docker build -t reimii/env env
+docker image inspect reimii/env
+docker container create --name env --env APP_PORT=9090 -p 90:9090 reimii/env
+docker container start env
+docker container stop env
+docker container logs env
