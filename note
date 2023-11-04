@@ -51,3 +51,12 @@ docker container create --name env --env APP_PORT=9090 -p 90:9090 reimii/env
 docker container start env
 docker container stop env
 docker container logs env
+
+# VOLUME 
+docker build -t reimii/volume volume
+docker image inspect reimii/volume
+docker container create --name volume --env APP_PORT=9090 -p 90:9090 reimii/volume
+docker container start volume
+docker container stop volume
+docker container logs volume
+docker container inspect volume
