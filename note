@@ -66,7 +66,7 @@ docker build -t reimii/workdir workdir
 docker image inspect reimii/workdir
 docker container create --name workdir -p 80:8080 reimii/workdir
 docker container start workdir
-docker container exec -i -t workdir /bin/bash
+docker container exec -i -t workdir /bin/sh
 docker container stop workdir
 
 # USER 
@@ -74,5 +74,13 @@ docker build -t reimii/user user
 docker image inspect reimii/user
 docker container create --name user -p 80:8080 reimii/user
 docker container start user
-docker container exec -i -t user /bin/bash
+docker container exec -i -t user /bin/sh
 docker container stop user
+
+# ARG 
+docker build -t reimii/arg arg --build-arg app=franxx
+docker image inspect reimii/arg
+docker container create --name arg -p 80:8080 reimii/arg
+docker container start arg
+docker container exec -i -t arg /bin/sh
+docker container stop arg
