@@ -84,3 +84,19 @@ docker container create --name arg -p 80:8080 reimii/arg
 docker container start arg
 docker container exec -i -t arg /bin/sh
 docker container stop arg
+
+# HEALTH 
+docker build -t reimii/health health
+docker image inspect reimii/health
+docker container create --name health -p 80:8080 reimii/health
+docker container start health
+docker container ls
+docker container stop health
+
+# ENTRYPOINT 
+docker build -t reimii/entrypoint entrypoint
+docker image inspect reimii/entrypoint
+docker container create --name entrypoint -p 80:8080 reimii/entrypoint
+docker container start entrypoint
+docker container exec -i -t entrypoint /bin/sh
+docker container stop entrypoint
