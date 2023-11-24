@@ -100,3 +100,25 @@ docker container create --name entrypoint -p 80:8080 reimii/entrypoint
 docker container start entrypoint
 docker container exec -i -t entrypoint /bin/sh
 docker container stop entrypoint
+
+# MULTI BUILD STAGE 
+docker build -t reimii/multi multi
+docker container ls
+docker image ls
+docker image inspect reimii/multi
+docker container create --name multi -p 80:8080 reimii/multi
+docker container start multi
+docker container stop multi
+
+# DOCKER PUSH
+# create access token and login
+docker login -u reimii
+
+# to hub.docker.com
+docker push reimii/multi:latest
+
+docker tag reimii/multi registry.digitalocean.com/reimiii/multi
+
+docker --config ~/.docker-digital-ocean/ push registry.digitalocean.com/reimiii/multi
+
+docker --config ~/.docker-digital-ocean/ pull registry.digitalocean.com/reimiii/multi
